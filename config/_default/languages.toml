@@ -1,0 +1,10 @@
+[en]
+  title = "Blog"
+  languageName = "English"
+  weight = 1
+
+[fr]
+  title = "Blog"
+  languageName = "French"
+  weight = 2
+
