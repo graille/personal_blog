@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Hugo deployment
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Read .env
+        id: hugo-version
+        run: |
+          . ./.env
+          echo "::set-output name=HUGO_VERSION::${HUGO_VERSION}"
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '${{ steps.hugo-version.outputs.HUGO_VERSION }}'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: graille/graille.github.io
+          publish_dir: ./
+          user_name: graille
+          publish_branch: master
+          enable_jekyll: false
+          allow_empty_commit: false
+          keep_files: false
+          commit_message: ${{ github.event.head_commit.message }}
