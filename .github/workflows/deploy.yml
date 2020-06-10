@@ -40,7 +40,8 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: graille/graille.github.io
           publish_dir: ./
-          user_name: graille
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           publish_branch: master
           enable_jekyll: false
           allow_empty_commit: false
