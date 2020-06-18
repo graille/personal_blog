@@ -47,7 +47,7 @@ Now, we can do the substitution $u=-t$ and then:
 
 $$\Gamma (\omega )=X(\omega )\int _{-\infty }^{+\infty }x^{*}(-u)e^{-\jmath \omega u}\,du$$
 
-In the second term, we can recognize the Fourier transform of $x^{*}(-u)$, which is equal to $X^{*}(\nu)$. Which lead to:
+In the second term, we can recognize the Fourier transform of $x^{\*}(-u)$, which is equal to $X^{\*}(\nu)$. Which lead to:
 
 $$\Gamma (\omega )=X(\omega )X^{*}(\omega )$$
 
