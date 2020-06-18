@@ -36,6 +36,3 @@ So, we have the equation :
 $$d_a(t) = \left\lvert (v_S - v_R)t - v_R \frac{d_a(t)}{c} + d_0 \right\rvert$$
 
 
-
-# Results
-
