@@ -56,3 +56,15 @@ Finally:
 $$\Gamma (\omega) = |X(\omega )|^{2}$$
 
 {{< /expand >}}
+
+## Bennett formula
+
+{{< expand "Overview" >}}
+This formula express the PSD of a digitally modulated signal at the output of a pulse shapping filter.
+{{< /expand >}}
+
+{{< expand "Demonstration" >}}
+{{< /expand >}}
+
+{{< expand "Examples" >}}
+{{< /expand >}}
