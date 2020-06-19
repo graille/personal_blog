@@ -1,6 +1,6 @@
 ---
 title: "Telecommunications: General relations"
-libraries: ['katex']
+libraries: ['mathjax']
 ---
 
 ## Wiener-Khintchine Theorem
@@ -61,9 +61,28 @@ $$\Gamma (\omega) = |X(\omega )|^{2}$$
 
 {{< expand "Overview" >}}
 This formula express the PSD of a digitally modulated signal at the output of a pulse shapping filter.
+
+$$S_{ss}(f) = \frac{\lvert G(f) \rvert^2}{T_s} \tilde{S}_{cc}(f) + \frac{\lvert \mu_c \rvert}{T_s} \sum_l \left\lvert G\left( \frac{l}{T_s} \right) \right\rvert^2 \delta\left( f - \frac{l}{T_s} \right)$$
+
+Where:
+
+- $S_{cc}(f)$ is the Power Spectral Density (PSD) of the symbols, which is the discrete Fourier transform of the covariance of $c_k$ (which is equal to his variance).
+- $\tilde{S}_{cc}(f)$ is the spectrum of uncentered symbols
+- $G(f)$ is the frequenxy response of the pulse shapping filter
 {{< /expand >}}
 
 {{< expand "Demonstration" >}}
+
+$$
+\begin{aligned}
+R_{ss}(t) & = E\lbrace s(t)s^{*}(t-\tau) \rbrace = E \left\lbrace \sum_{k \in \mathbb{Z}} c_k g(t - kT_s) \sum_{l \in \mathbb{Z}} c_l^{*} g(t - lT_s - \tau) \right\rbrace \\\\
+& = \sum_{k \in \mathbb{Z}} \sum_{l \in \mathbb{Z}} E\lbrace c_k c_l^{*}\rbrace  g(t - k T_s) g(t - lT_s - \tau)
+\end{aligned}
+$$
+
+
+
+
 {{< /expand >}}
 
 {{< expand "Examples" >}}
