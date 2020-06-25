@@ -1,7 +1,6 @@
 ---
 title: "Doppler effect: Analysis in classical physics"
-draft: true
-libraries: ['katex']
+libraries: ['mathjax']
 ---
 
 # Mathematical description
@@ -15,7 +14,7 @@ With
 - $c$ The celerity of the travelling wave
 
 ## Application
-
+### Case 1
 Let's consider the following situation:
 
 - The source $S$, initially at coordinates $(d_0, 0)$, move at speed $v_S$ along $x$ axis.
@@ -27,15 +26,21 @@ $$\Delta t = \frac{d_a(t)}{c}$$
 
 And, $d_a(t)$ can be expressed by the absolute value of the difference between the initial position of $S$ and the final position of $R$:
 
-$$d_a(t) = \lvert v_S t - v_R (t + \Delta t) + d_0 \rvert = \lvert (v_S - v_R)t - v_R \Delta t + d_0 \rvert$$
+$$
+\begin{aligned}
+d_a(t) &= \left\lvert d_R(t + \Delta(t)) -  d_S(t)\right\rvert \\
+&=\lvert v_S t - v_R (t + \Delta t) + d_0 \rvert \\
+&= \lvert (v_S - v_R)t - v_R \Delta t + d_0 \rvert
+\end{aligned}
+$$
 
 Finally, we obtain the equation :
 
-$$d_a(t) = \left\lvert (v_S - v_R)t - v_R \frac{d_a(t)}{c} + d_0 \right\rvert$$
+$$d_a(t) = \left\lvert (v_S - v_R)t - v_R \frac{d_a(t)}{c} + d_0 \right\rvert = \lvert \psi(t) \rvert$$
 
-### Case 1
+Notice that if $v_R \not = 0$, this equation is not easy to resolve. Because it describe the transitory regime when the  
 
-Let's consider a time interval where $d_a(t) > 0$. In this case, the previous equation give us:
+Let's consider a time interval where $\psi(t) > 0$. In this case, the previous equation give us:
 
 $$\left(1 + \frac{v_R}{c}\right) d_a(t) = (v_S - v_R)t + d_0$$
 
@@ -52,7 +57,7 @@ $$
 \end{aligned}
 $$
 
-This function has an inverse, in these conditions, we can express the inverse has an analytic function:
+This function has an inverse, under these conditions, we can express the inverse has an analytic function:
 
 $$
 \begin{aligned}
@@ -72,10 +77,40 @@ $$
 
 A well known application of this equation occurs when $s_S(t)$ is a periodic signal of pulsation $\omega_S$. In that case, the pulsation of the received signal is $\frac{c + v_R}{c + v_S}\omega_S$
 
+### Case 2: Accelerating source
+
+Let's consider the previous problem but with this time:
+
+- $v_R = at$
+- $v_S = \frac{d}{dt} d_S$ and not constant
+
+
+$$d_a(t) = \left\lvert d_R(t + \Delta(t)) -  d_S(t)\right\rvert = \lvert d_S(t) \rvert = \frac{1}{2}at^2$$
+
+Then $\phi(t) = t + \frac{1}{2c}at^2$
+And $\phi^{-1}(t) = \frac{c\sqrt{1+2\frac{t}{c}} - c}{ a}$
+
 
 ## Approximation of $\phi^{-1}(t)$
 
 ### Using a computer
+
+```matlab
+% ...
+
+% Create phi(t)
+t = 0:Ts:Tf;
+phi_t = distance/c + t;
+
+% Inverse phi(t)
+nt = phi_t;
+phi_i_t = t;
+
+phi_i_t = interp1(nt, phi_i_t, t);
+
+% The time vector is still t
+% The vector phi_i_t contains the inverse of phi(t).
+```
 
 ### Using the low-variation condition
 
@@ -90,28 +125,12 @@ Let's denote $f(t) = t - \frac{d_a(t)}{c}$:
 $$f \circ \phi(t) = t + \frac{d_a(t)}{c} - \frac{d_a(t + \frac{d_a(t)}{c})}{c}$$
 And
 
-$$\phi(t) \circ f = t + \frac{d_a(t - \frac{d_a(t)}{c})}{c} - \frac{d_a(t)}{c}$$
+$$\phi(t) \circ f = t + \frac{d_a\left(t - \frac{d_a(t)}{c}\right)}{c} - \frac{d_a(t)}{c}$$
 
-So, under the condition $d_a(t \pm \frac{d_a(t)}{c}) \approx d_a(t)$, the previous approximation is true.
+So, under the condition $d_a\left(t \pm \frac{d_a(t)}{c}\right) \approx d_a(t)$, the previous approximation is true. This condition is not simple to evaluate, it highly depends on the variation speed of $d_a$ but also on the value of c.
 
-#### Application 
-
-Using the previous result 
-
-$$\frac{d_a(t)}{c} = \frac{v_S - v_R}{c + v_R}t + \frac{d_0}{c + v_R}$$
-
-We have
-
-$$
-\begin{aligned}
-\frac{d_a(t - \frac{d_a(t)}{c})}{c} & = \frac{v_S - v_R}{c + v_R}\left[ t - \frac{v_S - v_R}{c + v_R}t - \frac{d_0}{c + v_R}\right] + \frac{d_0}{c + v_R} \\\\
-&= \frac{v_S - v_R}{c + v_R}t - \left(\frac{v_S - v_R}{c + v_R}\right)^2 t + \frac{d_0}{c + v_R}\left( 1 - \frac{v_S - v_R}{c + v_R}\right) \\\\
-&= \frac{d_a(t)}{c} -  \left(\frac{v_S - v_R}{c + v_R}\right)^2 t - \frac{v_S - v_R}{(c + v_R)^2}d_0
-\end{aligned}
-$$
-
-So, under the condition $c+v_R >> v_S - v_R$, the previous approximation is true. Note that in the particular case where $v_S = v_R = 0$, the approximation is an equality and we have a classical result depending only on $d_0$.
+However, we can use the following rule: If $d_a$ doesn't vary too quickly over time, the previous approximation is true if $d_a(t) \ll c$
 
 {{< /expand >}}
 
-**Usually, this approximation is always true when working with radio-wave (travelling at light speed) in classical physics, because the error caused by not using special relativity will appear before the error caused by using this approximation**
+**Usually, this approximation is always true when working with radio-wave (travelling at light speed) in classical physics, on Earth, because the distance are small and the error caused by not using special relativity will appear before the error caused by using this approximation**
