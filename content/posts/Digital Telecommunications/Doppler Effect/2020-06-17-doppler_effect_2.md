@@ -75,21 +75,56 @@ $$
 - The value $\frac{d_0}{c + v_S}$ is the **constant delay**, it is the uncompressible delay due to the time needed for the signal to travel from the source to the receiver.
 - The value $\frac{c + v_R}{c + v_S}t$ represent the deformation of the signal due to the Doppler Effect.
 
-A well known application of this equation occurs when $s_S(t)$ is a periodic signal of pulsation $\omega_S$. In that case, the pulsation of the received signal is $\frac{c + v_R}{c + v_S}\omega_S$
+A well known application of this equation occurs when $s_S(t)$ is a periodic signal of pulsation $\omega_c$. In that case, the pulsation of the received signal is $\frac{c + v_R}{c + v_S}\omega_c$. And in that case, the Doppler frequency shift is:
+
+$$
+\begin{aligned}
+\Delta \nu &= \frac{c + v_R}{c + v_S}\omega_c - \omega_c \\
+&= \omega_c\left(\frac{c + v_R}{c + v_S} - 1\right) \\
+&= \omega_c\frac{v_R - v_S}{c + v_S}
+\end{aligned}
+$$
+
+In the case where $v_R = 0$ and $v_S \ll c$, the result become 
+
+$$\Delta \nu = \omega_c \frac{v_S}{c}$$
 
 ### Case 2: Accelerating source
 
 Let's consider the previous problem but with this time:
 
-- $v_R = at$
-- $v_S = \frac{d}{dt} d_S$ and not constant
-
+- $v_R(t) = 0$
+- $v_S(t) = a t$
 
 $$d_a(t) = \left\lvert d_R(t + \Delta(t)) -  d_S(t)\right\rvert = \lvert d_S(t) \rvert = \frac{1}{2}at^2$$
 
 Then $\phi(t) = t + \frac{1}{2c}at^2$
-And $\phi^{-1}(t) = \frac{c\sqrt{1+2\frac{t}{c}} - c}{ a}$
+And $\phi^{-1}(t) = \frac{c\sqrt{1+2a\frac{t}{c}} - c}{ a}$
 
+So, let's consider an emitted signal
+
+$$s_S(t) = \cos(\omega_c t)$$
+
+The received signal is:
+
+$$s_R(t) = \cos\left( \omega_c \frac{c\sqrt{1+2a\frac{t}{c}} - c}{ a} \right)$$
+
+And then, the frequency shift implied by the Doppler effect is:
+
+$$
+\begin{aligned}
+\Delta \nu(t) &= \frac{d}{dt}\left(\omega_c \phi^{-1}(t)\right) - \omega_c \\
+&= \omega_c \frac{d}{dt}\left(\frac{c\sqrt{1+2a\frac{t}{c}} - c}{a}\right) - \omega_c \\
+&= \omega_c \frac{c}{a} \frac{a}{c \sqrt{1+2a\frac{t}{c}}} - \omega_c \\
+&= \omega_c \left( 1 - \frac{1}{\sqrt{1+2a\frac{t}{c}}}\right)
+\end{aligned}
+$$
+
+Using a 2nd order approximation, we have:
+
+$$\Delta \nu(t) = \omega_c \frac{a}{c}t = \omega_c \frac{v_S(t)}{c} $$
+
+Which is the same approximation as we found previously
 
 ## Approximation of $\phi^{-1}(t)$
 
@@ -134,3 +169,11 @@ However, we can use the following rule: If $d_a$ doesn't vary too quickly over t
 {{< /expand >}}
 
 **Usually, this approximation is always true when working with radio-wave (travelling at light speed) in classical physics, on Earth, because the distance are small and the error caused by not using special relativity will appear before the error caused by using this approximation**
+
+## Approximation of $\Delta \nu$
+
+As seen previously, under the condition $v_R = 0$ and $v_S \ll c$, a good approximation for $\Delta \nu$ is:
+
+$$\Delta \nu (t) = \omega_c \frac{v_S(t)}{c}$$
+
+**Note: This approximation is directly linked with the approximation of $\phi^{-1}(t)$, but with higher requirements regarding the initial values of $v_R$.**
