@@ -31,8 +31,8 @@ And, $d_a(t)$ can be expressed by the absolute value of the difference between t
 
 $$
 \begin{aligned}
-d_a(t) &= \left\lvert d_R(t + \Delta(t)) -  d_S(t)\right\rvert \\
-&=\lvert v_S t - v_R (t + \Delta t) + d_0 \rvert \\
+d_a(t) &= \left\lvert d_R(t + \Delta t) -  d_S(t)\right\rvert \\\\
+&=\lvert v_S t - v_R (t + \Delta t) + d_0 \rvert \\\\
 &= \lvert (v_S - v_R)t - v_R \Delta t + d_0 \rvert
 \end{aligned}
 $$
@@ -184,4 +184,4 @@ As seen previously, under the condition $v_R = 0$ and $v_S \ll c$, a good approx
 
 $$\Delta \nu (t) = \omega_c \frac{v_S(t)}{c}$$
 
-**Note: This approximation is directly linked with the approximation of $\phi^{-1}(t)$, but with higher requirements regarding the initial values of $v_R$.**
+**Note: This approximation is directly linked with the previous approximation of $\phi^{-1}(t)$, but with higher requirements regarding the initial values of $v_R$.**
