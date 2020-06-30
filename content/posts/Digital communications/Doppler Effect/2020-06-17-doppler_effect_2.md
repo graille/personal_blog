@@ -1,5 +1,6 @@
 ---
-title: "Doppler effect: Analysis in classical physics"
+title: "Doppler effect 2/3: Analysis in classical physics"
+date: 2020-06-17
 libraries: ['mathjax']
 ---
 
@@ -14,7 +15,9 @@ With
 - $c$ The celerity of the travelling wave
 
 ## Application
-### Case 1
+
+### Case 1: Source and receptor with uniform linear motion
+{{< expand "Deploy" >}}
 Let's consider the following situation:
 
 - The source $S$, initially at coordinates $(d_0, 0)$, move at speed $v_S$ along $x$ axis.
@@ -62,7 +65,7 @@ This function has an inverse, under these conditions, we can express the inverse
 $$
 \begin{aligned}
 \phi^{-1}(t) & = \dfrac{t - \dfrac{d_0}{c + v_R}}{\dfrac{c + v_S}{c + v_R}} \\\\
-&= \frac{c + v_R}{c + v_S}t - \frac{d_0}{c + v_S}
+& = \frac{c + v_R}{c + v_S}t - \frac{d_0}{c + v_S}
 \end{aligned}
 $$
 
@@ -79,18 +82,21 @@ A well known application of this equation occurs when $s_S(t)$ is a periodic sig
 
 $$
 \begin{aligned}
-\Delta \nu &= \frac{c + v_R}{c + v_S}\omega_c - \omega_c \\
-&= \omega_c\left(\frac{c + v_R}{c + v_S} - 1\right) \\
-&= \omega_c\frac{v_R - v_S}{c + v_S}
+\Delta \nu & = \frac{c + v_R}{c + v_S}\omega_c - \omega_c \\\\
+& = \omega_c\left(\frac{c + v_R}{c + v_S} - 1\right) \\\\
+& = \omega_c\frac{v_R - v_S}{c + v_S}
 \end{aligned}
 $$
 
 In the case where $v_R = 0$ and $v_S \ll c$, the result become 
 
-$$\Delta \nu = \omega_c \frac{v_S}{c}$$
+$$\boxed{\Delta \nu = \omega_c \frac{v_S}{c}}$$
+
+{{< /expand >}}
 
 ### Case 2: Accelerating source
 
+{{< expand "Deploy" >}}
 Let's consider the previous problem but with this time:
 
 - $v_R(t) = 0$
@@ -113,18 +119,20 @@ And then, the frequency shift implied by the Doppler effect is:
 
 $$
 \begin{aligned}
-\Delta \nu(t) &= \frac{d}{dt}\left(\omega_c \phi^{-1}(t)\right) - \omega_c \\
-&= \omega_c \frac{d}{dt}\left(\frac{c\sqrt{1+2a\frac{t}{c}} - c}{a}\right) - \omega_c \\
-&= \omega_c \frac{c}{a} \frac{a}{c \sqrt{1+2a\frac{t}{c}}} - \omega_c \\
+\Delta \nu(t) & = \frac{d}{dt}\left(\omega_c \phi^{-1}(t)\right) - \omega_c \\\\
+&= \omega_c \frac{d}{dt}\left(\frac{c\sqrt{1+2a\frac{t}{c}} - c}{a}\right) - \omega_c \\\\
+&= \omega_c \frac{c}{a} \frac{a}{c \sqrt{1+2a\frac{t}{c}}} - \omega_c \\\\
 &= \omega_c \left( 1 - \frac{1}{\sqrt{1+2a\frac{t}{c}}}\right)
 \end{aligned}
 $$
 
-Using a 2nd order approximation, we have:
+Finally, using a 2nd order approximation $\frac{1}{\sqrt{1+x}} = 1 + x + o(x^2)$, we have:
 
-$$\Delta \nu(t) = \omega_c \frac{a}{c}t = \omega_c \frac{v_S(t)}{c} $$
+$$\boxed{\Delta \nu(t) \approx \omega_c \frac{a}{c}t = \omega_c \frac{v_S(t)}{c}}$$
 
 Which is the same approximation as we found previously
+
+{{< /expand >}}
 
 ## Approximation of $\phi^{-1}(t)$
 

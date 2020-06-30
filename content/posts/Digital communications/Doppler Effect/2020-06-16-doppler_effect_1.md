@@ -1,5 +1,5 @@
 ---
-title: "Doppler effect: Physical description"
+title: "Doppler effect 1/3: Physical description"
 date: 2020-06-16
 libraries: ['katex']
 ---
