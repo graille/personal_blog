@@ -1,5 +1,5 @@
 baseURL = "https://graille.github.io"
-title = "DrawMeAPCB"
+title = "PCB-Blog"
 theme = "zdoc"
 
 defaultContentLanguage = "en"
