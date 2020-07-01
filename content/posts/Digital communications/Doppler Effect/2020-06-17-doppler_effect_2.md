@@ -90,7 +90,7 @@ $$
 
 In the case where $v_R = 0$ and $v_S \ll c$, the result become 
 
-$$\boxed{\Delta \nu = \omega_c \frac{v_S}{c}}$$
+$$\boxed{\Delta \nu = -\omega_c \frac{v_S}{c}}$$
 
 {{< /expand >}}
 
@@ -126,9 +126,9 @@ $$
 \end{aligned}
 $$
 
-Finally, using a 2nd order approximation $\frac{1}{\sqrt{1+x}} = 1 + x + o(x^2)$, we have:
+Finally, using a 2nd order approximation $\frac{1}{\sqrt{1+x}} = 1 - \frac{x}{2} + o(x^2)$, we have:
 
-$$\boxed{\Delta \nu(t) \approx \omega_c \frac{a}{c}t = \omega_c \frac{v_S(t)}{c}}$$
+$$\boxed{\Delta \nu(t) \approx -\omega_c \frac{a}{c}t = -\omega_c \frac{v_S(t)}{c}}$$
 
 Which is the same approximation as we found previously
 
@@ -182,6 +182,6 @@ However, we can use the following rule: If $d_a$ doesn't vary too quickly over t
 
 As seen previously, under the condition $v_R = 0$ and $v_S \ll c$, a good approximation for $\Delta \nu$ is:
 
-$$\Delta \nu (t) = \omega_c \frac{v_S(t)}{c}$$
+$$\Delta \nu (t) = -\omega_c \frac{v_S(t)}{c}$$
 
 **Note: This approximation is directly linked with the previous approximation of $\phi^{-1}(t)$, but with higher requirements regarding the initial values of $v_R$.**
