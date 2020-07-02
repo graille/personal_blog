@@ -1,9 +1,9 @@
 ---
-title: "Doppler effect: Effect on Telecommunications"
+title: "Doppler effect 3/3: Effect on Telecommunications"
 draft: true
 libraries: ['katex']
 ---
 
-# Space telecommunications
+# Effect on a signal
 
-# Multi-path telecommunications
+Let's consider a basic signal with the 

@@ -172,8 +172,7 @@ $$\phi(t) \circ f = t + \frac{d_a\left(t - \frac{d_a(t)}{c}\right)}{c} - \frac{d
 
 So, under the condition $d_a\left(t \pm \frac{d_a(t)}{c}\right) \approx d_a(t)$, the previous approximation is true. This condition is not simple to evaluate, it highly depends on the variation speed of $d_a$ but also on the value of c.
 
-However, we can use the following rule: If $d_a$ doesn't vary too quickly over time, the previous approximation is true if $d_a(t) \ll c$
-
+**However, we can use the following rule: If $d_a$ doesn't vary too quickly over time, the previous approximation is true if $d_a(t) \ll c$**
 {{< /expand >}}
 
 **Usually, this approximation is always true when working with radio-wave (travelling at light speed) in classical physics, on Earth, because the distance are small and the error caused by not using special relativity will appear before the error caused by using this approximation**
