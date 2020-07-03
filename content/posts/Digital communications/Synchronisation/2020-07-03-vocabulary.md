@@ -18,6 +18,8 @@ Utilises detected symbol values as reference.
 Does not depend on known or detected symbol
 values. 
 
+--------------------
+
 It is clear that DA techniques result in the best
 synchronisation performance, but some part of bandwidth
 or data transmission capacity is lost for the pilot signals
@@ -36,6 +38,8 @@ stable operation.
 Normal operation mode, during which the system
 adapts to slow variations of the synchronisation
 parameters.
+
+--------------------
 
 Different synchronisation principles can be used during
 the two phases.
