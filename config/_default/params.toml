@@ -1,9 +1,11 @@
 logo = true # Logo that appears in the site navigation bar.
-logoText = "PCB-Blog" # Logo text that appears in the site navigation bar.
+logoText = "PCBlog" # Logo text that appears in the site navigation bar.
 logoType = "short" # long, short
 description = "A blog about Electronic, Telecommunications, Space and cool stuff." # for SEO
 
 themeOptions = ["light", "dark"] # select options for site color theme
+
+custom_css = ["scss/custom.scss"]
 
 useFaviconGenerator = true # https://www.favicon-generator.org/
 

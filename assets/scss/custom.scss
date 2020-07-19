@@ -1,0 +1,25 @@
+
+// Plex fonts https://fonts.google.com/featured/Plex
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap');
+
+.header__wrapper .title {
+    font-size: 2.2rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.divider {
+    grid-template-columns: minmax(200px,280px)minmax(350px,900px)minmax(200px,240px);
+}
+
+// Size of menu items
+.menu__title--collapse[data-depth="1"], .menu__title[data-depth="0"] {
+    font-size: .8rem;
+}
+
+.menu__title--collapse[data-depth="2"], .menu__title[data-depth="1"] {
+    font-size: .7rem;
+}
+
+.menu__title--collapse[data-depth="3"], .menu__title[data-depth="2"] {
+    font-size: .6rem;
+}
